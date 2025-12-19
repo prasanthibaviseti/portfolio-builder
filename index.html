@@ -1,24 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Portfolio Builder</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Create Your Portfolio</h1>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Portfolio Builder</div>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="preview.html">Preview</a></li>
+            <li><a href="#about-section">About</a></li>
+        </ul>
+    </nav>
 
-<form id="portfolioForm">
-    <input type="text" id="name" placeholder="Your Name" required>
-    <textarea id="about" placeholder="About You"></textarea>
-    <input type="text" id="skills" placeholder="Skills (comma separated)">
-    <textarea id="projects" placeholder="Projects"></textarea>
-    <p id="charCount">0 / 300 characters</p>
+    <!-- MAIN CONTENT -->
+    <div class="container">
 
-    <input type="email" id="email" placeholder="Email">
-    <button type="submit">Generate Portfolio</button>
-</form>
+        <h1>Create Your Portfolio</h1>
+        <p class="subtitle">
+            Build a clean, professional portfolio in minutes
+        </p>
 
-<script src="script.js"></script>
+        <!-- FORM -->
+        <form id="portfolioForm" class="portfolio-form">
+
+            <input type="text" id="name" placeholder="Your Full Name" required>
+
+            <textarea id="about" placeholder="About You (max 300 characters)"></textarea>
+            <p id="charCount">0 / 300 characters</p>
+
+            <input type="text" id="skills" placeholder="Skills (comma separated)">
+            <input type="text" id="projects" placeholder="Projects">
+            <input type="email" id="email" placeholder="Email Address">
+
+            <div class="button-group">
+                <button type="submit" class="primary-btn">
+                    Generate Portfolio
+                </button>
+                <button type="button" onclick="toggleTheme()" class="secondary-btn">
+                    Toggle Theme
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- ABOUT SECTION -->
+    <section id="about-section" class="about-section">
+        <h2>About This Tool</h2>
+        <p>
+            This Portfolio Builder helps students generate a professional portfolio
+            without writing any code. Just fill the form, preview your portfolio,
+            and download it instantly.
+        </p>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
