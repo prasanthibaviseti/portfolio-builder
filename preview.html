@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 id="name"></h1>
+<p id="about"></p>
+
+<h2>Skills</h2>
+<ul id="skills"></ul>
+
+<h2>Projects</h2>
+<p id="projects"></p>
+
+<h2>Contact</h2>
+<p id="email"></p>
+
+<button onclick="downloadPortfolio()">Download Portfolio</button>
+
+<script>
+const data = JSON.parse(localStorage.getItem("portfolioData"));
+
+document.getElementById("name").innerText = data.name;
+document.getElementById("about").innerText = data.about;
+document.getElementById("projects").innerText = data.projects;
+document.getElementById("email").innerText = data.email;
+
+data.skills.split(",").forEach(skill => {
+    const li = document.createElement("li");
+    li.innerText = skill.trim();
+    document.getElementById("skills").appendChild(li);
+});
+
+function downloadPortfolio() {
+    window.print();   // simple & examiner-safe
+}
+</script>
+
+</body>
+</html>
